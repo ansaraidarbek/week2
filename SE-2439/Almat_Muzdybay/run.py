@@ -22,7 +22,7 @@ def task1 (initialString: str) -> str:
     newString = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        newString = int("Create new string as a concatenation of old string and your full name")
+        newString = initialString + " Almat Muzdybay "
     except: 
         newString = "Error"
     finally:
@@ -44,7 +44,7 @@ def task2(val : int) -> str:
     # Perform the task below, change the code inside the try block.:
     try : 
         # Even though the result is int, you should return it as a string.
-        result = int("Perform the calculation in single line!")
+        result = str(val*4+20)
     except:
         result= "Error"
     finally:
@@ -64,7 +64,7 @@ def task3(age: int) -> str:
     is_eligible = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        is_eligible = int("Check if the person is eligible for voting")
+        is_eligible = str(age>=18)
     except:
         is_eligible = "Error"
     finally:
@@ -84,7 +84,7 @@ def task4(number: int) -> str:
     result = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Check if the number is even or odd")
+        result = "Odd" if number % 2 == 1 else "Even"
     except:
         result = "Error"
     finally:
@@ -107,7 +107,7 @@ def task5(s: str) -> str:
     
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Reverse the string and append its length")
+        result = f"{s[::-1]}{len(s)}"
     except:
         result = "Error"
     finally:
@@ -128,7 +128,7 @@ def task6(n: int) -> str:
     result = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Calculate the sum of the first n natural numbers")
+        result = str(n*(n+1)//2)
     except:
         result = "Error"
     finally:
@@ -149,9 +149,26 @@ def task7(n: int) -> str:
     freq = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        freq = int("Count the frequency of each digit in the number")
+        #freq = int("Count the frequency of each digit in the number")
+        num_str=str(n)
+        dict_w_digits = {
+			"1": "one",
+			"2": "two",
+			"3": "three",
+			"4": "four",
+			"5": "five",
+			"6": "six",
+			"7": "seven",
+			"8": "eight",
+			"9": "nine",
+			"0": "zero"
+		}
+        for digit in sorted(set(num_str),key=num_str.index):
+            count = num_str.count(digit)
+            freq += f"{dict_w_digits[digit]}{count}"
+        return freq
     except:
-        freq = "Error"
+        freq="Error"
     finally:
         return freq
 
@@ -172,7 +189,14 @@ def task8(password: str) -> str:
     is_valid = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        is_valid = int("Check if the password meets the criteria")
+        count_digit=0
+        for char in password:
+            if char.isdigit():
+                count_digit+=1
+        if len(password) >= 8 and count_digit>=1:
+            is_valid = "True"
+        else:
+            is_valid = "False"
     except:
         is_valid = "Error"
     finally:
@@ -193,7 +217,14 @@ def task9(n: int) -> str:
 
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Check if the number is prime or not")
+        if n <= 1:
+            return False
+        for i in range(2, n-1): 
+            if n % i == 0:
+                result = False  
+                break
+        else:
+            result = "True"
     except:
         result = "Error"
     finally:
@@ -214,7 +245,8 @@ def task10(n: int) -> str:
 
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Check if the number is palindrome or not")
+        str_num=str(n)
+        result = "True" if str_num==str_num[::-1] else "False"
     except:
         result = "Error"
     finally:
@@ -234,7 +266,8 @@ def task11(start: int, end: int) -> str:
     count = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        count = int("Count how many numbers are divisible by 5")
+        count = str(sum(i % 5 == 0 for i in range(start, end+1)))
+
     except:
         count = "Error"
     finally:
@@ -254,7 +287,7 @@ def task12(a: int, b: int) -> str:
     is_greater = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        is_greater = int("Check if the sum of the two numbers is greater than 50")
+        is_greater = str((a+b)>50)
     except:
         is_greater = "Error"
     finally:
@@ -275,7 +308,7 @@ def task13(a: int, b: int, c: int) -> str:
     largest = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        largest = int("Find the largest number among the three numbers")
+        largest = str(max(a,b,c))
     except:
         largest = "Error"
     finally:
@@ -294,7 +327,12 @@ def task14(number: int) -> str:
     result = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Check if the number is positive, negative, or zero")
+        if number>0:
+            result="Positive"
+        elif number<0:
+            result="Negative"
+        else:
+            result="Zero"
     except:
         result = "Error"
     finally:
@@ -314,7 +352,7 @@ def task15(a: int, b: int) -> str:
     result = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Check if the first number is divisible by the second number")
+        result = str(a % b == 0)
     except:
         result = "Error"
     finally:
@@ -338,7 +376,11 @@ def task16(first: int, second: int, third: int) -> str:
     
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Check if the numbers form a Pythagorean triplet")
+        sides = sorted([first, second, third])
+        if sides[0]**2 + sides[1]**2 == sides[2]**2:
+            result="True"
+        else:
+            result="False"
     except:
         result = "Error"
     finally:
@@ -359,7 +401,10 @@ def task17(number: int) -> str:
     factorial = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        factorial = int("Calculate the factorial of the number")
+        factorial=1
+        for i in range(1,number+1):
+            factorial*=i
+        factorial = str(factorial)
     except:
         factorial = "Error"
     finally:
@@ -376,7 +421,7 @@ def task18() -> str:
     answer = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        answer = int("Solve the riddle")
+        answer = "7"
     except:
         answer = "Error"
     finally:
@@ -395,7 +440,10 @@ def task19(x: int) -> str:
     result = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Calculate the sum of all even numbers from 1 to x")
+        sum=0
+        for i in range(2,x+1,2):
+            sum+=i
+        result=str(sum)
     except:
         result = "Error"
     finally:
@@ -421,7 +469,12 @@ def task20(secret_number: int, guess: int) -> str:
 
     # Perform the task below, change the code inside the try block.:
     try : 
-        result = int("Return comands")
+        if guess>secret_number:
+            result="Too High"
+        elif guess<secret_number:
+            result="Too Low"
+        else:
+            result="Correct!"
     except:
         result = "Error"
     finally:
