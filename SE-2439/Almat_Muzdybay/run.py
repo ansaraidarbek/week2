@@ -22,7 +22,7 @@ def task1 (initialString: str) -> str:
     newString = None
     # Perform the task below, change the code inside the try block.:
     try : 
-        newString = initialString + " Almat Muzdybay "
+        newString = initialString + "Almat Muzdybay"
     except: 
         newString = "Error"
     finally:
@@ -148,25 +148,26 @@ def task7(n: int) -> str:
     """
     freq = None
     # Perform the task below, change the code inside the try block.:
-    try : 
-        #freq = int("Count the frequency of each digit in the number")
-        num_str=str(n)
-        dict_w_digits = {
-			"1": "one",
-			"2": "two",
-			"3": "three",
-			"4": "four",
-			"5": "five",
-			"6": "six",
-			"7": "seven",
-			"8": "eight",
-			"9": "nine",
-			"0": "zero"
-		}
-        for digit in sorted(set(num_str),key=num_str.index):
-            count = num_str.count(digit)
-            freq += f"{dict_w_digits[digit]}{count}"
-        return freq
+    try :
+         
+        word_map = {
+        "0": "zero",
+        "1": "one",
+        "2": "two",
+        "3": "three",
+        "4": "four",
+        "5": "five",
+        "6": "six",
+        "7": "seven",
+        "8": "eight",
+        "9": "nine"
+    }
+        number_str = str(n)
+        unique_digits = sorted({ch for ch in number_str}, key=int)
+        freq = ""
+        for ch in unique_digits:
+            count = number_str.count(ch)
+            freq += word_map[ch] + str(count)
     except:
         freq="Error"
     finally:
@@ -218,10 +219,10 @@ def task9(n: int) -> str:
     # Perform the task below, change the code inside the try block.:
     try : 
         if n <= 1:
-            return False
+            return "False"
         for i in range(2, n-1): 
             if n % i == 0:
-                result = False  
+                result = "False" 
                 break
         else:
             result = "True"
