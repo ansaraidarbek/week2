@@ -168,10 +168,5 @@ if __name__ == "__main__":
     if (status):
         # Mapping function names to test cases
         test_cases = ltc.load_test_cases()
-        # messages = check_student_files(test_cases)
-        # print_messages(messages)
-        
-        # To test a specific student's file
-        student_name = "Unknown_Profile"  # Replace with the student's folder name
-        messages_specific = check_student_file(student_name, test_cases)
-        print_messages(messages_specific)
+        messages = check_student_files(test_cases)
+        print_messages(messages)
