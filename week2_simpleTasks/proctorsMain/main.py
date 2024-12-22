@@ -58,7 +58,7 @@ allowedFileNames = {
 # Root directory and subdirectories
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Traverse up one level
 group = ["testingFolder", "SE-2437", "SE-2439"]
-groupName = group[0]
+groupName = group[2]
 group_directory = os.path.join(root, groupName)
 
 # Function to clean up student directories
