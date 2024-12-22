@@ -1,3 +1,0 @@
-Student: Unknown_Profile
-Function: task2
-Error Details: Input: -3, Expected: 8, Got: 20

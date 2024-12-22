@@ -1,0 +1,7 @@
+Student: Angsar_Aidarbek
+Function: task1
+Error Details: Error: Traceback (most recent call last):
+  File "d:\Учеба\AITU\PHD\2trimester\introToPython\week2\week3Assignment\proctorsMain\proctorsMain\testCases\testCases.py", line 6, in test_task1
+    result = module.task1("Hello, ")
+TypeError: task1() missing 1 required positional argument: 'num2'
+
