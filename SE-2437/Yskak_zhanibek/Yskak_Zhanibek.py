@@ -10,7 +10,7 @@ def prerequisites() -> bool:
 
 def task1(initialString: str) -> str:
     try:
-        newString = initialString + " Dias Tursynbai"
+        newString = initialString + "Yskak Zhanibek"
     except:
         newString = "Error"
     finally:
