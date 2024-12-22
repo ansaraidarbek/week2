@@ -10,7 +10,7 @@ def prerequisites() -> bool:
 
 def task1(initialString: str) -> str:
     try:
-        newString = initialString + " Raimbek Mussin"
+        newString = initialString + " Dias Tursynbai"
     except:
         newString = "Error"
     finally:
@@ -188,3 +188,4 @@ def task20(secret_number: int, guess: int) -> str:
         result = "Error"
     finally:
         return result
+
