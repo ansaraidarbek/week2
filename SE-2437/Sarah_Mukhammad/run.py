@@ -23,7 +23,7 @@ def task1(initialString: str) -> str:
     newString = None
     # Perform the task below, change the code inside the try block.:
     try:
-        newString = f"{str}Syzdykov Muslim"
+        newString = f"{str}Mukhammad Sarah"
     except:
         newString = "Error"
     finally:
