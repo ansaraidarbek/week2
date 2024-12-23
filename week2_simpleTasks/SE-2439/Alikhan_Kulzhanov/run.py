@@ -443,4 +443,4 @@ def task20(secret_number: int, guess: int) -> str:
     except:
         result = "Error"
     finally:
-        return result    
+        return result 
