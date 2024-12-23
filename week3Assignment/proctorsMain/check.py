@@ -2,7 +2,7 @@ import main
 import testCases.loading as ltc
 import os
 
-root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # Traverse up one level
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Traverse up one level
 group = ["testingFolder", "SE-2437", "SE-2439"]
 groupName = group[0]
 group_directory = os.path.join(root, groupName)
@@ -56,7 +56,7 @@ def check_student_file(student_name, test_cases={}):
     return messages
 
 if __name__ == "__main__":
-    status = main.clean_student_directories()  # Clean up directories before running tests
+    status = main.clean_student_directories(group_directory)  # Clean up directories before running tests
 
     if (status):
         # Mapping function names to test cases

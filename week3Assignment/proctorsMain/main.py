@@ -62,12 +62,11 @@ groupName = group[0]
 group_directory = os.path.join(root, groupName)
 
 # Function to clean up student directories
-def clean_student_directories():
+def clean_student_directories(group_directory):
     RED = "\033[91m"   # ANSI code for red text
     RESET = "\033[0m"  # ANSI code to reset text color
 
     # Ensure the directory exists
-    print(group_directory)
     if not os.path.exists(group_directory):
         print(f"{RED}Group directory not found: {group_directory}{RESET}")
         return False
@@ -163,7 +162,7 @@ def print_messages(messages):
 
 # Run the checker
 if __name__ == "__main__":
-    status = clean_student_directories()  # Clean up directories before running tests
+    status = clean_student_directories(group_directory)  # Clean up directories before running tests
 
     if (status):
         # Mapping function names to test cases
