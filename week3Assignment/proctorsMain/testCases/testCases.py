@@ -159,7 +159,7 @@ def test_task12(_, module):
         ]
         for inp, exp in zip(inputs, expected):
             result = module.task12(inp)
-            if result != exp:
+            if result != str(exp):
                 return False, f"Input: {inp}, Expected: {exp}, Got: {result}"
         return True, "All test cases passed"
     except Exception as e:
