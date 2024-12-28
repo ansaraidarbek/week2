@@ -1,6 +1,6 @@
 def task1(initialString: str) -> str:
     try:
-        newString = initialString + " YourFullName"
+        newString = initialString + "Beibarys_Zhumagali"
     except:
         newString = "Error"
     finally:
